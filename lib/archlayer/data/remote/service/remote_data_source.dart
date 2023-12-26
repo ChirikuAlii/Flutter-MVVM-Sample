@@ -14,7 +14,7 @@ class RemoteDataSource extends RemoteSafeRequest {
   //   return request(apiCall: () async => apiClient.getTopRatedMovies());
   // }
 
-  Future<Either> nowPlayingMovie() async {
+  Future<Either<NowPlayingResponse?>> nowPlayingMovie() async {
     return request(apiCall: () async => _apiClient.getNowPlayingMovies());
   }
 

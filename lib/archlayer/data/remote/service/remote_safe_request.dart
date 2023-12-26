@@ -4,12 +4,12 @@ import 'package:sample_riverpod/utils/error_code/error_code.dart';
 
 class RemoteSafeRequest {
 
-  Future<Either> request<T>( {required Future<T> Function () apiCall}) async {
+  Future<Either<T>> request<T>( {required Future<T> Function () apiCall}) async {
     try {
       final T response = await apiCall.call();
-      return Success(response);
+      return Either<T>.success(response);
     } on ErrorCode catch (e,_) {
-      return Error(e);
+      return Either<T>.error(e);
     }
 
   }

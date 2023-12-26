@@ -1,15 +1,16 @@
 
 
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:sample_riverpod/utils/error_code/error_code.dart';
 
-sealed class Either<T> {}
+part 'either.freezed.dart';
 
-class Success<T> extends Either<T>{
-  final T value ;
-  Success(this.value);
-}
+@Freezed(
+  toJson: false,
+  fromJson: false
+)
 
-class Error extends Either{
-  final ErrorCode value;
-  Error(this.value);
+sealed class Either<T> with _$Either<T> {
+   const factory Either.success(T value) = Success;
+   const factory Either.error(ErrorCode value) = Error;
 }
