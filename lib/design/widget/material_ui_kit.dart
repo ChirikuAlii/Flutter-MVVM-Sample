@@ -1,25 +1,17 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:provider/provider.dart';
-import 'package:sample_riverpod/archlayer/presentation/pages/home/home_viewmodel.dart';
 
-@RoutePage()
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+
+import 'package:flutter/material.dart';
+
+class MaterialUiKit extends StatefulWidget {
+  const MaterialUiKit({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MaterialUiKit> createState() => _MaterialUiKitState();
+
+
 }
 
-class _HomePageState extends State<HomePage> {
-
-  @override
-  void initState() {
-
-    super.initState();
-  }
+class _MaterialUiKitState extends State<MaterialUiKit> {
 
   int _counter = 0;
 
@@ -36,8 +28,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = Provider.of<HomeViewModel>(context);
-    //viewModel.doLoadNowPlayingMovie();
     return Scaffold(
       appBar: AppBar(
         title: Text("Tes"),

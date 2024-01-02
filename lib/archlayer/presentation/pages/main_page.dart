@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sample_riverpod/archlayer/presentation/pages/favorite_page.dart';
 import 'package:sample_riverpod/archlayer/presentation/pages/home/home_page.dart';
 import 'package:sample_riverpod/archlayer/presentation/pages/search_page.dart';

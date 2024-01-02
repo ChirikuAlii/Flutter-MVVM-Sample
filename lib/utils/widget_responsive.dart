@@ -8,25 +8,41 @@ class Adaptive {
   double get _width => MediaQuery.of(context).size.width;
   double get _height => MediaQuery.of(context).size.height;
 
-  factory Adaptive.of(BuildContext context){
+  /**
+   * widht hegith from figma or adobexd
+   */
+  double get _designerWidth => 375;
+  double get _designerHeight => 688;
+
+  factory Adaptive.of(BuildContext context) {
     return Adaptive._(context);
   }
 
-  double width(double size){
+  double width(double size) {
     return size;
   }
 
-  double height(double size){
+  double height(double size) {
     return size;
   }
 
-  double widthPercent(double percent){
-    final double result =  _width * percent / 100;
+  double widthDesign(double size) {
+    final percentage = (size / _designerWidth * 100).roundToDouble() / 100;
+    return _width * percentage;
+  }
+
+  double heightDesign(double size) {
+    final percentage = (size / _designerHeight * 100).roundToDouble() / 100;
+    return _height * percentage;
+  }
+
+  double widthPercent(double percent) {
+    final double result = _width * percent / 100;
     return result;
   }
 
-  double heightPercent(double percent){
-    final double result = _height * percent/100;
+  double heightPercent(double percent) {
+    final double result = _height * percent / 100;
     return result;
   }
 }
