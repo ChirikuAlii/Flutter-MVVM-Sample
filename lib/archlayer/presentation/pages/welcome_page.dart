@@ -10,21 +10,29 @@ class WelcomePage extends StatelessWidget {
   final AppRouterImpl _appRouter = getIt<AppRouterImpl>();
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 3), () {
-      _appRouter.goToHomePage();
-    });
-    return Scaffold(
-        body: Center(
-      child: Column(
-        children: [
-          Text(("Splash Screen")),
-          Container(child: GestureDetector(
-            onTap: () {
-              //Navigator.of(context).pop
-            },
-          ))
-        ],
-      ),
-    ));
+
+    return FutureBuilder(
+      future: getIt.allReady(),
+      builder: (context,snapshot) {
+        if(snapshot.hasData){
+          Future.delayed(Duration(seconds: 3), () {
+            _appRouter.goToHomePage();
+          });
+        }
+        return Scaffold(
+            body: Center(
+          child: Column(
+            children: [
+              Text(("Splash Screen")),
+              Container(child: GestureDetector(
+                onTap: () {
+                  //Navigator.of(context).pop
+                },
+              ))
+            ],
+          ),
+        ));
+      }
+    );
   }
 }

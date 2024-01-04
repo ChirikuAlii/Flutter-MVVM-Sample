@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 import 'package:sample_riverpod/archlayer/presentation/pages/home/home_viewmodel.dart';
+import 'package:sample_riverpod/archlayer/presentation/shared_view_model/setting/setting_view_model.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -37,6 +38,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final viewModel = Provider.of<HomeViewModel>(context);
+    var settings = Provider.of<SettingViewModel>(context);
     //viewModel.doLoadNowPlayingMovie();
     return Scaffold(
       appBar: AppBar(
@@ -59,7 +61,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: (){
+
+          settings.setIsDarkMode(!settings.isDarkMode);
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

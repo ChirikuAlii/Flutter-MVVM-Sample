@@ -11,8 +11,8 @@ class Adaptive {
   /**
    * widht hegith from figma or adobexd
    */
-  double get _designerWidth => 375;
-  double get _designerHeight => 688;
+  double get _designerWidth => 430;
+  double get _designerHeight => 932;
 
   factory Adaptive.of(BuildContext context) {
     return Adaptive._(context);
