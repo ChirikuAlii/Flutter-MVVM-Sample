@@ -5,6 +5,7 @@ import 'package:sample_riverpod/archlayer/domain/usecase/home/get_now_playing_mo
 import 'package:sample_riverpod/archlayer/presentation/pages/home/home_viewmodel.dart';
 import 'package:sample_riverpod/archlayer/presentation/route/app_router_impl.dart';
 import 'package:sample_riverpod/archlayer/presentation/shared_view_model/setting/setting_view_model.dart';
+import 'package:sample_riverpod/design/colors/colors.dart';
 import 'package:sample_riverpod/design/images/images.dart';
 import 'package:sample_riverpod/design/theme/theme.dart';
 import 'package:sample_riverpod/di/di.dart';
@@ -48,15 +49,19 @@ class _MyAppState extends State<MyApp> {
               }
           );
         }else{
-          return Container(
-            color: Colors.white,
-            child: Center(
-              child: Image(
-                image: AssetImage(imagesLogoApp),
-                width: Adaptive.of(context).widthDesign(160),
-                height: Adaptive.of(context).heightDesign(160),
-              ),
-            ),
+          return Builder(
+            builder: (context) {
+              return Container(
+                color: GMColors.dark1,
+                child: Center(
+                  child: Image(
+                    image: const AssetImage(imagesLogoApp),
+                    width: Adaptive.of(context).widthDesign(160),
+                    height: Adaptive.of(context).heightDesign(160),
+                  ),
+                ),
+              );
+            }
           );
         }
       }

@@ -8,7 +8,7 @@ class GMTheme implements AppTheme {
   ThemeData light() {
     return ThemeData.from(
         colorScheme: GMColors.gmLightScheme,
-        textTheme: GmTextTheme.gmTextTheme
+        textTheme: GmTextTheme.gmLightTextTheme,
     );
   }
 
@@ -16,7 +16,7 @@ class GMTheme implements AppTheme {
   ThemeData dark() {
     return ThemeData(
       colorScheme: GMColors.gmDarkScheme,
-      textTheme: GmTextTheme.gmTextTheme,
+      textTheme: GmTextTheme.gmDarkTextTheme,
     );
   }
 }

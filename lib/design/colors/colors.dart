@@ -17,6 +17,7 @@ class GMColors{
 
   static const Color dark1 = Color(0xFF181A20);
   static const Color grey = Color(0xFF3A3F47);
+  static const Color greyscale1 = Color(0xFF212121);
 
   static const  ColorScheme gmLightScheme = ColorScheme.light(
     brightness: Brightness.light,
