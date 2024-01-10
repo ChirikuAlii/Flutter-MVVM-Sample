@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
-import 'package:sample_riverpod/archlayer/domain/usecase/home/get_now_playing_movie_use_case.dart';
-import 'package:sample_riverpod/archlayer/presentation/pages/home/home_viewmodel.dart';
 import 'package:sample_riverpod/archlayer/presentation/route/app_router_impl.dart';
 import 'package:sample_riverpod/archlayer/presentation/shared_view_model/setting/setting_view_model.dart';
 import 'package:sample_riverpod/design/colors/colors.dart';

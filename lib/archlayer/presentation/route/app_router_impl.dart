@@ -25,4 +25,9 @@ class AppRouterImpl implements AppRouter {
   Single<void> goToHomePage() {
     return Single<void>.fromFuture(router.push(HomeRoute()));
   }
+
+  @override
+  Single<void> goToIntroPage() {
+    return Single<void>.fromFuture(router.push(IntroRoute()));
+  }
 }

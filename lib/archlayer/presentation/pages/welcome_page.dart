@@ -19,9 +19,7 @@ class WelcomePage extends StatelessWidget {
       future: getIt.allReady(),
       builder: (context,snapshot) {
         if(snapshot.hasData){
-          Future.delayed(const Duration(seconds: 3), () {
-            _appRouter.goToHomePage();
-          });
+          _appRouter.goToIntroPage();
         }
         return Scaffold(
             body: Center(

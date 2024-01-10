@@ -9,6 +9,7 @@ import 'package:sample_riverpod/archlayer/data/remote/service/remote_data_source
 import 'package:sample_riverpod/archlayer/data/repo/movie/movie_repo_impl.dart';
 import 'package:sample_riverpod/archlayer/domain/usecase/home/get_now_playing_movie_use_case.dart';
 import 'package:sample_riverpod/archlayer/presentation/pages/home/home_viewmodel.dart';
+import 'package:sample_riverpod/archlayer/presentation/pages/intro/intro_viewmodel.dart';
 import 'package:sample_riverpod/archlayer/presentation/route/app_router_impl.dart';
 import 'package:sample_riverpod/archlayer/presentation/shared_view_model/setting/setting_view_model.dart';
 
@@ -43,7 +44,7 @@ List<SingleChildWidget> viewModelModule(){
     Provider<HomeViewModel>(
         create: (_) => HomeViewModel(getIt<GetNowPlayingMovieUseCase>())
     ),
-    
+    Provider<IntroViewModel>(create: (_) => IntroViewModel()),
     Provider(create: (_) => SettingViewModel(getIt<Session>()))
   ];
 }

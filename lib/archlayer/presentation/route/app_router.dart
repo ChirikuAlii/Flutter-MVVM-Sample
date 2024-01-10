@@ -13,4 +13,6 @@ mixin AppRouter {
   Single<void> goBackToRoot();
 
   Single<void> goToHomePage();
+
+  Single<void> goToIntroPage();
 }
